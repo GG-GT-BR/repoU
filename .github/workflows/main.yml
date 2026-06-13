@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: run a online-script
-        run: echo "Hello ${{ github.inputs.name }}"
+        run: echo "Hello ${{ github.event.inputs.name }}"
         
       - name: run a multiline-script
         run: |
