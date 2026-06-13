@@ -1,5 +1,11 @@
 name: CI
 on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Just a name'
+        default: 'Jospehina'
+        required: true
   push:
     branches:  [main, develop]
   pull_request:
@@ -10,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: run a online-script
-        run: echo Hello secco
+        run: echo "Hello ${{ github.input.name }}"
         
       - name: run a multiline-script
         run: |
