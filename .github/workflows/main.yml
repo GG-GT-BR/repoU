@@ -1,0 +1,18 @@
+name: CI
+on:
+  push:
+    branches:  [main, develop]
+  pull_request:
+    branches: [main ]
+jobs:
+  build_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: run a online-script
+        run: echo Hello secco
+        
+      - name: run a multiline-script
+        run: |
+          echo Hello secco
+          echo Hello denovo
